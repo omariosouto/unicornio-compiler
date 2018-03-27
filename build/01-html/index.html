@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gulp Markdown Docs</title>
+  <style>/*
+
+Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #002b36;
+  color: #839496;
+  -webkit-text-size-adjust: none;
+}
+
+.hljs-comment,
+.diff .hljs-header,
+.hljs-doctype,
+.hljs-pi,
+.lisp .hljs-string {
+  color: #586e75;
+}
+
+/* Solarized Green */
+.hljs-keyword,
+.hljs-winutils,
+.method,
+.hljs-addition,
+.css .hljs-tag,
+.hljs-request,
+.hljs-status,
+.nginx .hljs-title {
+  color: #859900;
+}
+
+/* Solarized Cyan */
+.hljs-number,
+.hljs-command,
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-rule .hljs-value,
+.hljs-doctag,
+.tex .hljs-formula,
+.hljs-regexp,
+.hljs-hexcolor,
+.hljs-link_url {
+  color: #2aa198;
+}
+
+/* Solarized Blue */
+.hljs-title,
+.hljs-localvars,
+.hljs-chunk,
+.hljs-decorator,
+.hljs-built_in,
+.hljs-identifier,
+.vhdl .hljs-literal,
+.hljs-id,
+.css .hljs-function,
+.hljs-name {
+  color: #268bd2;
+}
+
+/* Solarized Yellow */
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body,
+.smalltalk .hljs-number,
+.hljs-constant,
+.hljs-class .hljs-title,
+.hljs-parent,
+.hljs-type,
+.hljs-link_reference {
+  color: #b58900;
+}
+
+/* Solarized Orange */
+.hljs-preprocessor,
+.hljs-preprocessor .hljs-keyword,
+.hljs-pragma,
+.hljs-shebang,
+.hljs-symbol,
+.hljs-symbol .hljs-string,
+.diff .hljs-change,
+.hljs-special,
+.hljs-attr_selector,
+.hljs-subst,
+.hljs-cdata,
+.css .hljs-pseudo,
+.hljs-header {
+  color: #cb4b16;
+}
+
+/* Solarized Red */
+.hljs-deletion,
+.hljs-important {
+  color: #dc322f;
+}
+
+/* Solarized Violet */
+.hljs-link_label {
+  color: #6c71c4;
+}
+
+.tex .hljs-formula {
+  background: #073642;
+}
+</style><style>body {
+  margin-left: 35vw;
+  font-family: sans-serif;
+}
+pre {
+  /* matches solarized_dark */
+  background: #002b36;
+  color: #839496;
+  padding: 1em;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.doc-nav {
+  position: fixed;
+  width: 32vw;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+
+}
+.doc-nav a {
+  text-decoration: none;
+}
+.doc-nav a:hover {
+  text-decoration: underline;
+}
+.doc-nav-group {
+  list-style: none;
+  padding: 0;
+}
+.doc-nav-group-header {
+  display: block;
+  padding: 0.5em 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.doc-nav-group-header,
+.doc-nav-group-header a:active,
+.doc-nav-group-header a:visited {
+  color: #212121;
+}
+.doc-nav-item {
+  padding: 0.5em 0 0.5em 1.5em;
+}
+.doc-nav-item a:active,
+.doc-nav-item a:visited {
+  color: #454545;
+}
+.doc-section-header {
+  font-size: 1.7em;
+  border-bottom: 1px solid #839496;
+  padding-bottom: 0.5em;
+}
+.doc-article {
+  padding-bottom: 4em;
+  display: block;
+}
+.doc-article h1 {
+  font-size: 1.6em;
+}
+.doc-article + .doc-article {
+  padding-top: 3em;
+  border-top: 1px solid #323232;
+}</style></head>
+  <body>
+    <section class="doc-nav"><ul class="doc-nav-group"><li class="doc-nav-item"><a href="#00-introducaoAoJava">Nav Label</a></li><li class="doc-nav-item"><a href="#01-introducaoAoJava">Nav Label</a></li></ul></section>
+    <section class="doc-content"><section class="doc-section"><article class="doc-article"><a class="doc-nav-anchor" name="00-introducaoAoJava"></a><h1 id="capitulo-01">Capitulo 01</h1>
+<p>Ola mundo</p>
+<ul>
+<li>Eu sou</li>
+<li>omariosouto</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> fodac = <span class="hljs-string">&apos;oi&apos;</span>;
+</code></pre>
+<p>lorem</p>
+</article><article class="doc-article"><a class="doc-nav-anchor" name="01-introducaoAoJava"></a><h1 id="loops">Loops</h1>
+<p>There are two kind of loops in Java, <code>for</code> and <code>while</code>.</p>
+<h2 id="for">For</h2>
+<p>The for loop has three sections:</p>
+<pre><code class="lang-java">    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span><span class="hljs-comment">; i &lt; 3; i++) {}</span>
+</code></pre>
+<pre><code class="lang-exec__java">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> Main {
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {}
+
+            }
+    }
+</code></pre>
+<p>First section runs once when we enter the loop.</p>
+<p>Second section is the gate keeper, if it returns <code>true</code>, we run the statements in the loop, if it returns <code>false</code>, we exit the loop. It runs right after the first section for the first time, then every time the loop is finished and the third section is run.</p>
+<p>The third section is the final statement that will run every time the loop runs.</p>
+<p>So in the case we have just seen, the loop will run 3 times. Here is the order of the commands:</p>
+<pre><code class="lang-java"><span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+i &lt; <span class="hljs-number">3</span> <span class="hljs-comment">// 0 &lt; 3 = true</span>
+      <span class="hljs-comment">// Inside of loop</span>
+i++ <span class="hljs-comment">// i is now 1</span>
+i &lt; <span class="hljs-number">3</span> <span class="hljs-comment">// 1 &lt; 3 = true</span>
+      <span class="hljs-comment">// Inside of loop</span>
+i++ <span class="hljs-comment">// i is now 2</span>
+i &lt; <span class="hljs-number">3</span> <span class="hljs-comment">// 2 &lt; 3 = true</span>
+      <span class="hljs-comment">// Inside of loop</span>
+i++ <span class="hljs-comment">// i is now 3</span>
+i &lt; <span class="hljs-number">3</span> <span class="hljs-comment">// 3 &lt; 3 = false</span>
+      <span class="hljs-comment">// Loop is done...</span>
+</code></pre>
+<pre><code class="lang-exec__java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> Main {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+        i &lt; <span class="hljs-number">3</span> <span class="hljs-comment">// 0 &lt; 3 = true</span>
+              <span class="hljs-comment">// Inside of loop</span>
+        i++ <span class="hljs-comment">// i is now 1</span>
+        i &lt; <span class="hljs-number">3</span> <span class="hljs-comment">// 1 &lt; 3 = true</span>
+              <span class="hljs-comment">// Inside of loop</span>
+        i++ <span class="hljs-comment">// i is now 2</span>
+        i &lt; <span class="hljs-number">3</span> <span class="hljs-comment">// 2 &lt; 3 = true</span>
+              <span class="hljs-comment">// Inside of loop</span>
+        i++ <span class="hljs-comment">// i is now 3</span>
+        i &lt; <span class="hljs-number">3</span> <span class="hljs-comment">// 3 &lt; 3 = false</span>
+              <span class="hljs-comment">// Loop is done...</span>
+
+
+    }
+}
+</code></pre>
+</article></section></section>
+  </body>
+

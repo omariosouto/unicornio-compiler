@@ -1,0 +1,49 @@
+<a class="doc-nav-anchor" name="01-introducaoAoJava"></a><h1 id="loops">Loops</h1>
+<p>There are two kind of loops in Java, <code>for</code> and <code>while</code>.</p>
+<h2 id="for">For</h2>
+<p>The for loop has three sections:</p>
+<pre><code class="lang-java">    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span><span class="hljs-comment">; i &lt; 3; i++) {}</span>
+</code></pre>
+<button data-js="compileCode">Rodar!</button><template><code class="lang-exec__java">    public class Main {
+        public static void main(String[] args) {
+            for (int i = 0; i &lt; 3; i++) {}
+
+            }
+    }
+</code></template>
+<p>First section runs once when we enter the loop.</p>
+<p>Second section is the gate keeper, if it returns <code>true</code>, we run the statements in the loop, if it returns <code>false</code>, we exit the loop. It runs right after the first section for the first time, then every time the loop is finished and the third section is run.</p>
+<p>The third section is the final statement that will run every time the loop runs.</p>
+<p>So in the case we have just seen, the loop will run 3 times. Here is the order of the commands:</p>
+<pre><code class="lang-java"><span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+i &lt; <span class="hljs-number">3</span> <span class="hljs-comment">// 0 &lt; 3 = true</span>
+      <span class="hljs-comment">// Inside of loop</span>
+i++ <span class="hljs-comment">// i is now 1</span>
+i &lt; <span class="hljs-number">3</span> <span class="hljs-comment">// 1 &lt; 3 = true</span>
+      <span class="hljs-comment">// Inside of loop</span>
+i++ <span class="hljs-comment">// i is now 2</span>
+i &lt; <span class="hljs-number">3</span> <span class="hljs-comment">// 2 &lt; 3 = true</span>
+      <span class="hljs-comment">// Inside of loop</span>
+i++ <span class="hljs-comment">// i is now 3</span>
+i &lt; <span class="hljs-number">3</span> <span class="hljs-comment">// 3 &lt; 3 = false</span>
+      <span class="hljs-comment">// Loop is done...</span>
+</code></pre>
+<button data-js="compileCode">Rodar!</button><template><code class="lang-exec__java">public class Main {
+    public static void main(String[] args) {
+        int i = 0;
+        i &lt; 3 // 0 &lt; 3 = true
+              // Inside of loop
+        i++ // i is now 1
+        i &lt; 3 // 1 &lt; 3 = true
+              // Inside of loop
+        i++ // i is now 2
+        i &lt; 3 // 2 &lt; 3 = true
+              // Inside of loop
+        i++ // i is now 3
+        i &lt; 3 // 3 &lt; 3 = false
+              // Loop is done...
+
+
+    }
+}
+</code></template>
