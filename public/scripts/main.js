@@ -9,6 +9,7 @@ formCodigo.addEventListener("submit", (event) => {
 
     // Código vem de um editor assim: https://codemirror.net/
     console.log('Enviando código... aguarde...')
+    $compilerReturn.getDoc().setValue('Enviando código... aguarde...');
     compilerService
         .submit(codigo)
         .then(result => {
