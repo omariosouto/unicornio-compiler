@@ -1,0 +1,73 @@
+
+<div class="codeFloatingArea clearfix">
+    <div class="row">
+        <div class="col-6">
+            <form id="formCodigo">
+                <textarea name="codigo" id="userEditor" >
+            // Welcome to the Interactive Java Tutorial.
+            // Start by choosing a chapter and
+            // write your code in this window.
+            
+            public class Main {
+            
+                public static void main(String[] args) {
+            
+                    System.out.println("Hello, World!");
+            
+                }
+            
+            }
+                </textarea>
+                <button>Roda</button>
+            </form>
+        </div>
+    
+        <div class="col-6">
+            <textarea id="compilerReturn"></textarea>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        padding-bottom: 90vh;
+    }
+    .codeFloatingArea {
+        background: #ddd;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%; 
+    }
+
+    .col-6 {
+        width: 50%;
+        float: left;
+    }
+</style>
+
+
+<link rel="stylesheet" href="http://localhost:3000/scripts/libs/codemirror/codemirror.min.css">
+<script type="text/javascript" src="http://localhost:3000/scripts/libs/codemirror/codemirror.min.js"></script>
+<!-- text/x-java -->
+<script type="text/javascript" src="http://localhost:3000/scripts/libs/codemirror/modes/java-mode.js"></script>
+<!-- text/javascript -->
+<script type="text/javascript" src="http://localhost:3000/scripts/libs/codemirror/modes/javascript-mode.js"></script>
+
+<script>
+    var $userEditor = CodeMirror.fromTextArea(document.querySelector('#userEditor'), {
+        value: 'package example;',
+        lineNumbers: true,
+        matchBrackets: true,
+        mode: "text/x-java"
+    });
+    var $compilerReturn = CodeMirror.fromTextArea(document.querySelector('#compilerReturn'), {
+        value: 'package example;',
+        lineNumbers: true,
+        matchBrackets: true,
+        mode: "text/x-java"
+    });
+
+</script>
+<script src="http://localhost:3000/scripts/main.js" type="module"></script>

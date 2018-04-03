@@ -18,12 +18,13 @@ The for loop has three sections:
     for (int i = 0; i < 3; i++) {}
 ```
 ```exec__java
-    public class Main {
-        public static void main(String[] args) {
-            for (int i = 0; i < 3; i++) {}
-
-            }
+public class Main {
+    public static void main(String[] args) {
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Hello, World!" + i);
+        }
     }
+}
 ```
 
 First section runs once when we enter the loop.

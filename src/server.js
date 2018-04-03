@@ -1,59 +1,39 @@
+const Express = require('express')
+const server = new Express()
+
 const fs = require('fs')
-const buildedHtmlPath = './build/01-html/index.html'
+const path = require('path')
+// Controllers
+const buildController = require('./controllers/buildController')
+
+server.use(Express.static('public'));
+server.set('view engine', 'ejs')
+server.set('views', path.join(__dirname, '/views'));
+
+
+server.get('/', (req,res) => {
+    res.send('Gerar apostilas')
+})
+
+server.get('/languages/:language', (req,res) => {    
+    const LANGUAGE = req.params.language
+    const languageBuildedHTMLFolder = `./apostilas/${LANGUAGE}/build/html-builded`
+    const chaptersArray = fs.readdirSync(languageBuildedHTMLFolder).map(chapter => chapter.replace('.html', ''))
+
+    res.render('languages/chapterList', { chapters: chaptersArray, language: LANGUAGE })
+})
+
+server.get('/languages/:language/:chapter', (req,res) => {    
+    const content = fs.readFileSync(`./apostilas/java/build/html-builded/${req.params.chapter}.html`, "utf8");
+
+    console.log(content)
+
+    res.render('languages/chapter', { content })
+})
+
+server.get('/build/:language', buildController)
+
+server.listen(3000, () => console.log('Servidor subiu na porta 3000'))
 
 
 
-fs.readFile(buildedHtmlPath, "utf8", function(err, data) {
-    if (err) throw err;
-    mapHtmlToInteractiveDoc(data)
-});
-
-// Isomorpich Code
-
-
-const cheerio = require('cheerio')
-process.env.LANGUAGE = 'java'
-
-function mapHtmlToInteractiveDoc(html) {
-    
-    const $ = cheerio.load(html)
-
-    $('.doc-article').map((index, element) => {
-        let $currentChapter = $(element)
-        formatCompilerCode($currentChapter, $)
-
-
-        const chapterSlug = $currentChapter.find('.doc-nav-anchor').attr('name')
-        generateFiles($currentChapter.html(), `./build/02-builded/${chapterSlug}.html`)
-    })
-
-}
-
-
-function formatCompilerCode($currentChapter, $) {
-    $currentChapter
-        .find(`.lang-exec__${process.env.LANGUAGE}`)
-        .map((index, element) => {
-            const $preTagWrapper = $(element).parent()
-            // Insert button runCode
-            const $btnCompile = $(`<button data-js="compileCode">Rodar!</button>`)
-            $preTagWrapper.before($btnCompile)
-
-            // Convert highlithed compiler code to pure text
-            const pureCompilerCode = $(element).text()
-            $(element).html(pureCompilerCode)
-
-            // Convert <pre> to <template>
-            $preTagWrapper.replaceWith(
-                $('<template/>').html($preTagWrapper.html())
-            );
-
-        })
-}
-
-function generateFiles(content, path) {
-    fs.writeFile(path, content, function(err) {
-        if(err) return console.log(err);
-        console.log(`Capítulo: ${path}, criado com sucesso :)`)
-    }); 
-}

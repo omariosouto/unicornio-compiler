@@ -4,12 +4,13 @@
 <p>The for loop has three sections:</p>
 <pre><code class="lang-java">    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span><span class="hljs-comment">; i &lt; 3; i++) {}</span>
 </code></pre>
-<button data-js="compileCode">Rodar!</button><template><code class="lang-exec__java">    public class Main {
-        public static void main(String[] args) {
-            for (int i = 0; i &lt; 3; i++) {}
-
-            }
+<button data-js="compileCode">Rodar!</button><template><code class="lang-exec__java">public class Main {
+    public static void main(String[] args) {
+        for (int i = 0; i &lt; 3; i++) {
+            System.out.println(&quot;Hello, World!&quot; + i);
+        }
     }
+}
 </code></template>
 <p>First section runs once when we enter the loop.</p>
 <p>Second section is the gate keeper, if it returns <code>true</code>, we run the statements in the loop, if it returns <code>false</code>, we exit the loop. It runs right after the first section for the first time, then every time the loop is finished and the third section is run.</p>

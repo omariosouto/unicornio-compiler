@@ -200,12 +200,13 @@ pre {
 <p>The for loop has three sections:</p>
 <pre><code class="lang-java">    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span><span class="hljs-comment">; i &lt; 3; i++) {}</span>
 </code></pre>
-<pre><code class="lang-exec__java">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> Main {
-        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {}
-
-            }
+<pre><code class="lang-exec__java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> Main {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+            System.out.println(<span class="hljs-string">&quot;Hello, World!&quot;</span> + i);
+        }
     }
+}
 </code></pre>
 <p>First section runs once when we enter the loop.</p>
 <p>Second section is the gate keeper, if it returns <code>true</code>, we run the statements in the loop, if it returns <code>false</code>, we exit the loop. It runs right after the first section for the first time, then every time the loop is finished and the third section is run.</p>
