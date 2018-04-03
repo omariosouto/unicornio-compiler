@@ -1,3 +1,4 @@
+require('dotenv').config()
 const Express = require('express')
 const server = new Express()
 
@@ -33,7 +34,7 @@ server.get('/languages/:language/:chapter', (req,res) => {
 
 server.get('/build/:language', buildController)
 
-server.listen(3000, () => console.log('Servidor subiu na porta 3000'))
+server.listen(process.env.PORT, () => console.log('Servidor subiu na porta 3000'))
 
 
 
